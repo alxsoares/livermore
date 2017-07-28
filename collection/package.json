@@ -1,0 +1,29 @@
+{
+  "name": "livermore-collection",
+  "version": "1.0.0-alpha",
+  "description": "Collects data from Bitcoin exchanges.",
+  "main": "lib/main.js",
+  "scripts": {
+    "start": "node lib/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/embatbr/livermore.git"
+  },
+  "keywords": [
+    "livermore",
+    "collection",
+    "bitcoin",
+    "trade"
+  ],
+  "author": {
+    "name": "Eduardo Tenório",
+    "email": "embatbr@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/embatbr/livermore/issues"
+  },
+  "homepage": "https://github.com/embatbr/livermore#readme"
+}
