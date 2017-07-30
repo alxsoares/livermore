@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/embatbr/livermore/issues"
   },
-  "homepage": "https://github.com/embatbr/livermore#readme"
+  "homepage": "https://github.com/embatbr/livermore#readme",
+  "dependencies": {
+    "pusher": "^1.5.1",
+    "pusher-js": "^4.1.0"
+  }
 }

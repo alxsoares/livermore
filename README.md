@@ -4,7 +4,7 @@ Bitcoin trading system. Designed to analyse data from Bitstamp and Foxbit.
 
 ## Architecture
 
-The project is divided in three main independent parts, shown in temporal order:
+The project is divided in three main independent parts, shown in temporal order (from the data's perspective):
 
 1. Collection
 2. Ingestion
@@ -12,7 +12,7 @@ The project is divided in three main independent parts, shown in temporal order:
 
 ### 1. Collection
 
-Acquires data (trades and orders) from exchanges, through REST APIs, websockets or other mode. The data is packed and sent to a message queue service. Written in NodeJS. More [here](collection/).
+Acquires data (trades and orders) from exchanges, through REST APIs, websockets or other modes. The data is packed and sent to a message queue service. Written in NodeJS. More [here](collection/).
 
 ### 2. Ingestion
 
