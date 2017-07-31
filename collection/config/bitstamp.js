@@ -3,16 +3,12 @@
 */
 
 
-var websocket = {
-    pusher_key: 'de504dc5763aeef9ff52'
-}
-
-var subscriptions = [
-    ['live_trades', 'trade']
-];
-
-
 module.exports = {
-    websocket: websocket,
-    subscriptions: subscriptions
+    pusher_key: 'de504dc5763aeef9ff52',
+    subscriptions: [
+        {
+            channel_name: 'live_trades',
+            event: 'trade'
+        }
+    ]
 };

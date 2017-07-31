@@ -15,5 +15,5 @@ broadcaster = {
     }
 };
 
-bitstamp_collector = collectors.BitstampCollector(bitstamp_confs, broadcaster);
-bitstamp_collector.start();
+collectors.bitstamp_collector(bitstamp_confs, broadcaster)
+          .start();

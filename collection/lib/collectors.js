@@ -6,40 +6,28 @@
 var Pusher = require('pusher-js/node')
 
 
-var BitstampCollector = function(confs, broadcaster) {
-    var collector = {
-        broadcaster: broadcaster
-    };
-
-    pusher_key = confs.websocket.pusher_key;
-    collector.pusher = new Pusher(pusher_key, {
+var bitstamp_collector = function(confs, broadcaster) {
+    pusher = new Pusher(confs.pusher_key, {
         encrypted: true
     });
 
-    collector.start = function() {
-        var subscriptions = confs.subscriptions;
+    return {
+        start: function() {
+            confs.subscriptions.forEach(function(subscription) {
+                var channel_name = subscription.channel_name;
+                var event = subscription.event;
 
-        var get_channel = function(channel_name) {
-            var pusher = collector.pusher;
-            return pusher.channel(channel_name) || pusher.subscribe(channel_name);
-        };
+                var channel = pusher.channel(channel_name) || pusher.subscribe(channel_name);
 
-        subscriptions.forEach(function(tuple) {
-            var channel_name = tuple[0];
-            var event = tuple[1];
-
-            var channel = get_channel(channel_name);
-
-            channel.bind(event, function(order) {
-                collector.broadcaster.broadcast(channel_name, order);
+                channel.bind(event, function(order) {
+                    broadcaster.broadcast(channel_name, order);
+                });
             });
-        });
+        }
     };
-
-    return collector;
 };
 
 
 module.exports = {
-    BitstampCollector: BitstampCollector
+    bitstamp_collector: bitstamp_collector
 };
