@@ -6,25 +6,32 @@
 var Pusher = require('pusher-js/node')
 
 
-var bitstamp_collector = function(confs, broadcaster) {
-    pusher = new Pusher(confs.pusher_key, {
-        encrypted: true
-    });
-
+var collector = (confs, broadcaster, get_channel) => {
     return {
-        start: function() {
-            confs.subscriptions.forEach(function(subscription) {
+        start: () => {
+            confs.subscriptions.forEach((subscription) => {
                 var channel_name = subscription.channel_name;
                 var event = subscription.event;
 
-                var channel = pusher.channel(channel_name) || pusher.subscribe(channel_name);
+                var channel = get_channel(channel_name);
 
-                channel.bind(event, function(order) {
+                channel.bind(event, (order) => {
                     broadcaster.broadcast(channel_name, order);
                 });
             });
         }
     };
+};
+
+
+var bitstamp_collector = (confs, broadcaster) => {
+    pusher = new Pusher(confs.pusher_key, {
+        encrypted: true
+    });
+
+    return collector(confs, broadcaster, (channel_name) => {
+        return pusher.channel(channel_name) || pusher.subscribe(channel_name);
+    });
 };
 
 
