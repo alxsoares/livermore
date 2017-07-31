@@ -10,5 +10,8 @@ module.exports = {
             channel_name: 'live_trades',
             event: 'trade'
         }
-    ]
+    ],
+    ingestion: {
+        interval: 1000
+    }
 };
