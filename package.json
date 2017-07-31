@@ -1,6 +1,6 @@
 {
-  "name": "livermore-collection",
-  "version": "1.0.0-alpha",
+  "name": "livermore",
+  "version": "1.0.0-wip",
   "description": "Collects data from Bitcoin exchanges.",
   "main": "lib/main.js",
   "scripts": {
@@ -13,7 +13,6 @@
   },
   "keywords": [
     "livermore",
-    "collection",
     "bitcoin",
     "trade"
   ],
@@ -28,6 +27,7 @@
   "homepage": "https://github.com/embatbr/livermore#readme",
   "dependencies": {
     "pusher": "^1.5.1",
-    "pusher-js": "^4.1.0"
+    "pusher-js": "^4.1.0",
+    "queue-fifo": "^0.2.3"
   }
 }
