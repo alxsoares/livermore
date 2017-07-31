@@ -4,17 +4,17 @@
 
 
 // mock
-var broadcaster = () => {
+var broadcaster = (env, name) => {
     return {
-        broadcast: function(channel_name, order) {
-            console.log(channel_name, order);
+        broadcast: function(channel_name, data) {
+            console.log(`${env.name}_${name}_${channel_name}`, data);
         }
     };
 };
 
 
-var bitstamp_broadcaster = () => {
-    return broadcaster();
+var bitstamp_broadcaster = (env) => {
+    return broadcaster(env, 'bitstamp');
 }
 
 
