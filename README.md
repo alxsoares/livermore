@@ -6,9 +6,13 @@
 
 Bitcoin trading system. Designed to initially analyse data from Bitstamp and Foxbit.
 
-## Structure
+## Design
 
 The project is separated in three self-contained parts:
+
+<p align="center">
+    <img src="design.png" />
+</p>
 
 - Collection:
     - Captures data from exchanges (via websockets, REST APIs or other methods);
