@@ -12,6 +12,6 @@ module.exports = {
         }
     ],
     ingestion: {
-        interval: 1000
+        interval: parseInt(process.env.BITSTAMP_INGESTION_INTERVAL) || 1000
     }
 };

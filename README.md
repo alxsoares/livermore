@@ -21,13 +21,16 @@ The project is separated in three self-contained parts:
 - Vision:
     - Reads data consolidated in the database;
     - Shows trading curves, as well as technical analysis drawings;
+    - Probably will be written in JavaScript with NodeJS too.
 - Analysis:
     - Performs analyses (predictions, average pricing and technical analysis stuff);
-    - Written in Python;
+    - Written in Python.
 
 **ATTENTION:** *This is not intended to be a bot, but an investment assistant.*
 
 ## DevOps
+
+The project will be hosted in Google Cloud.
 
 ## TODO
 
