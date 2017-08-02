@@ -16,15 +16,12 @@ The project is separated in three self-contained parts:
 
 - Collection:
     - Captures data from exchanges (via websockets, REST APIs or other methods);
-    - The data is saved in a relational database (PostgreSQL);
-    - Written in JavaScript with NodeJS.
+    - The data is saved in a relational database (PostgreSQL).
 - Vision:
     - Reads data consolidated in the database;
-    - Shows trading curves, as well as technical analysis drawings;
-    - Probably will be written in JavaScript with NodeJS too.
+    - Shows trading curves, as well as technical analysis drawings.
 - Analysis:
-    - Performs analyses (predictions, average pricing and technical analysis stuff);
-    - Written in Python.
+    - Performs analyses (predictions, average pricing and technical analysis stuff).
 
 **ATTENTION:** *This is not intended to be a bot, but an investment assistant.*
 
