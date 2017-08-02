@@ -4,5 +4,7 @@
 export PACKAGE_ROOT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")"/.. && pwd)"
 cd $PACKAGE_ROOT_PATH
 
+export ENV="prod"
 
-npm start
+
+node lib/collector.js

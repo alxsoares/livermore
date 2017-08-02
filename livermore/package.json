@@ -4,7 +4,7 @@
   "description": "Collects data from Bitcoin exchanges.",
   "main": "lib/main.js",
   "scripts": {
-    "start": "node lib/main.js",
+    "start": "bin/start.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
