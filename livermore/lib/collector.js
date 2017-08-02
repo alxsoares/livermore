@@ -5,9 +5,9 @@
 
 var Queue = require('queue-fifo');
 
-var collectors = require('./collectors');
-var handlers = require('./handlers');
-var ingestors = require('./ingestors');
+var fetchers = require('./collector/fetchers');
+var handlers = require('./collector/handlers');
+var broadcasters = require('./collector/broadcasters');
 
 general_confs = require('../config/index.js');
 var confs = {
@@ -23,8 +23,8 @@ exchanges.forEach((exchange) => {
 
     handler = handlers[`${exchange}_handler`]();
 
-    collector = collectors[`${exchange}_collector`](confs[exchange], handler, queue);
-    collector.start();
+    fetcher = fetchers[`${exchange}_fetcher`](confs[exchange], handler, queue);
+    fetcher.start();
 
     // mock
     var db_client = {
@@ -39,6 +39,6 @@ exchanges.forEach((exchange) => {
         }
     };
 
-    ingestor = ingestors[`${exchange}_ingestor`](confs[exchange], queue, db_client);
-    ingestor.start();
+    broadcaster = broadcasters[`${exchange}_broadcaster`](confs[exchange], queue, db_client);
+    broadcaster.start();
 });

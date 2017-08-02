@@ -11,7 +11,7 @@ module.exports = {
             event: 'trade'
         }
     ],
-    ingestion: {
-        interval: parseInt(process.env.BITSTAMP_INGESTION_INTERVAL) || 1000
+    broadcasting: {
+        interval: parseInt(process.env.BITSTAMP_BROADCASTING_INTERVAL) || 1000
     }
 };

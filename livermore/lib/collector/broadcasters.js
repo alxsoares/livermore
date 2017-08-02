@@ -1,9 +1,9 @@
 /*
-* Ingests data into a database.
+* Broadcasts data to various destinations (e.g., a database).
 */
 
 
-var ingestor = (confs, queue, db_client) => {
+var broadcaster = (confs, queue, db_client) => {
     return {
         start: () => {
             setInterval(() => {
@@ -18,17 +18,17 @@ var ingestor = (confs, queue, db_client) => {
 
                     db_client.end();
                 }
-            }, confs.ingestion.interval);
+            }, confs.broadcasting.interval);
         }
     };
 };
 
 
-var bitstamp_ingestor = (confs, queue, db_client) => {
-    return ingestor(confs, queue, db_client);
+var bitstamp_broadcaster = (confs, queue, db_client) => {
+    return broadcaster(confs, queue, db_client);
 };
 
 
 module.exports = {
-    bitstamp_ingestor: bitstamp_ingestor
+    bitstamp_broadcaster: bitstamp_broadcaster
 };
