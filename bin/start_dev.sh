@@ -6,4 +6,4 @@ cd $PACKAGE_ROOT_PATH
 
 
 # TODO execute all of there in different machines
-node lib/collector.js
+node lib/collection.js
